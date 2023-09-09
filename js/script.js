@@ -12,34 +12,28 @@ project 1 - A Random Quote Generator
 ***/
 const quotes = [
   {
-    quote: "",
-    source: "",
-    citation: "",
-    year: ""
+    quote: "I've learned that people will forget what you said, people will forget what you did, but people will never forget how you made them feel",
+    source: "Maya Angelou"
   },
   {
-    quote: "",
-    source: "",
-    citation: "",
-    year: ""
+    quote: "You may encounter many defeats, but you must not be defeated. In fact, it may be necessary to encounter the defeats, so you can know who you are, what you can rise from, how you can still come out of it.",
+    source: "Maya Angelou"
   },
   {
-    quote: "",
-    source: "",
-    citation: "",
-    year: ""
+    quote: "Success is liking yourself, liking what you do, and liking how you do it.",
+    source: "Maya Angelou",
   },
   {
-    quote: "",
-    source: "",
-    citation: "",
-    year: ""
+    quote: "Darkness cannot drive out darkness; only light can do that. Hate cannot drive out hate; only love can do that.",
+    source: "Martin Luther King Jr.",
+    citation: "Strength to Love",
+    year: 1963
   },
   {
-    quote: "",
-    source: "",
-    citation: "",
-    year: ""
+    quote: "The future I had imagined, the one just about to be realized, the culmination of decades of striving, evaporated.",
+    source: "Dr. Paul Kalanithi",
+    citation: "When Breath Becomes Air",
+    year: 2016
   },
 ];
 
@@ -63,7 +57,7 @@ getRandomQuote()
 function printQuote(){
   const getquote = getRandomQuote();
 
-  const html = 
+  let html = 
   `<p class="quote">${getquote.quote}</p>
   <p class="source">${getquote.source}`;
   
