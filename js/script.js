@@ -84,6 +84,7 @@ function printQuote(){
 
 }
 
+// change quote displayed every 5 seconds
 function refreshQuote(){
   printQuote();
   setTimeout(refreshQuote, 5000)
