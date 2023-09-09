@@ -10,14 +10,17 @@ project 1 - A Random Quote Generator
 /*** 
  * `quotes` array 
 ***/
+// array of object quotes
 const quotes = [
   {
     quote: "I've learned that people will forget what you said, people will forget what you did, but people will never forget how you made them feel",
-    source: "Maya Angelou"
+    source: "Maya Angelou",
+    category: "Inpirational"
   },
   {
     quote: "You may encounter many defeats, but you must not be defeated. In fact, it may be necessary to encounter the defeats, so you can know who you are, what you can rise from, how you can still come out of it.",
-    source: "Maya Angelou"
+    source: "Maya Angelou",
+    category: "Inpirational"
   },
   {
     quote: "Success is liking yourself, liking what you do, and liking how you do it.",
@@ -43,10 +46,11 @@ const quotes = [
 ***/
 // console.log(quotes.length)
 function getRandomQuote(){
+  // get random number between 0-5
   const randNum = Math.floor(Math.random() * quotes.length);
-  console.log(randNum)
+  
+  // index into quotes array with random number and return object at that index
   const randQuote = quotes[randNum]
-  console.log(randQuote)
   return randQuote
 };
 getRandomQuote()
@@ -56,7 +60,8 @@ getRandomQuote()
 
 function printQuote(){
   const getquote = getRandomQuote();
-
+  
+  // grab object values 
   let html = 
   `<p class="quote">${getquote.quote}</p>
   <p class="source">${getquote.source}`;
@@ -69,11 +74,22 @@ function printQuote(){
     html += `<span class="year">${getquote.year}</span>`
   }
 
+  if(getquote.category){
+    html += `<span class="category">, ${getquote.category}</span>`
+  }
+
   html += `</p>`
-  
+
   document.getElementById('quote-box').innerHTML = html; 
+
 }
 
+function refreshQuote(){
+  printQuote();
+  setTimeout(refreshQuote, 5000)
+}
+
+refreshQuote();
 /***
  * click event listener for the print quote button
  * DO NOT CHANGE THE CODE BELOW!!
