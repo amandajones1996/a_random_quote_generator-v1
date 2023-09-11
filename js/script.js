@@ -56,9 +56,10 @@ function getRandomQuote(){
 getRandomQuote()
 
 function changeBackgroundColor(){
-  const getColorValue = () => Math.floor(Math.random * 256)
-
-  return `rbg((${getColorValue()}, ${getColorValue()}, ${getColorValue()})`
+  // get random value up to 256
+  const getColorValue = () => Math.floor(Math.random() * 256)
+  // place a new random value into each respective rgb space
+  return `rgb(${getColorValue()}, ${getColorValue()}, ${getColorValue()})`
 }
 
 /***
