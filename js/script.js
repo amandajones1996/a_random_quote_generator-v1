@@ -50,10 +50,17 @@ function getRandomQuote(){
   const randNum = Math.floor(Math.random() * quotes.length);
   
   // index into quotes array with random number and return object at that index
-  const randQuote = quotes[randNum]
-  return randQuote
+  return quotes[randNum]
+
 };
 getRandomQuote()
+
+function changeBackgroundColor(){
+  const getColorValue = () => Math.floor(Math.random * 256)
+
+  return `rbg((${getColorValue()}, ${getColorValue()}, ${getColorValue()})`
+}
+
 /***
  * `printQuote` function
 ***/
@@ -79,13 +86,13 @@ function printQuote(){
   }
 
   html += `</p>`
-
+  document.body.style.backgroundColor = changeBackgroundColor();
   document.getElementById('quote-box').innerHTML = html; 
-
 }
 
 // change quote displayed every 5 seconds
 function refreshQuote(){
+  document.body.style.backgroundColor = changeBackgroundColor();
   printQuote();
   setTimeout(refreshQuote, 5000)
 }
